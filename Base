@@ -1,0 +1,154 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class practica1ipc {
+
+    public static void main(String[] args){
+
+    //declaracion de mis variables y scanner
+    Scanner teclado = new Scanner(System.in); //Para que el usuario pueda escribir
+    String eleccion;
+    System.out.print("Quiere iniciar el programa? Y/N ");
+    eleccion = teclado.nextLine();
+
+        switch (eleccion) {
+        //condicion inicio del programa
+        case "Y":
+            System.out.println("ENCENDIENDO...");
+            System.out.println(":) BIENVENIDO (:");
+            int contadorinicio = 0;
+            do {
+                contadorinicio++;
+                //menu consola
+
+                System.out.println("============MENU============");
+                System.out.println("1. Encriptar");
+                System.out.println("2. Desencriptar");
+                System.out.println("3. Ataque con texto claro");
+                System.out.println("4. Generar Reportes");
+                System.out.println("5. Salir");
+                System.out.println("============================");
+
+                try {
+
+                    int opcion; //Opcion del usuario
+                    System.out.println("Escribe una de las opciones");
+                    opcion = teclado.nextInt();
+
+                    switch (opcion) {
+                        case 1:
+                            System.out.println("Has seleccionado la opcion 1");
+                            String[] abecedario = {"a","b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+
+
+                            int opcion1;
+
+                            System.out.println("============MENU ENCRIPTAR============");
+                            System.out.println("1. Ingreso mensaje");
+                            System.out.println("2. Ingrese Matriz Clave A");
+                            System.out.println("3. Ingrese Matriz Clave B");
+                            System.out.println("4. Encriptar");
+                            System.out.println("======================================");
+                            System.out.println("Escoge una de las siguientes opciones");
+                            opcion1 = teclado.nextInt();
+
+                            switch (opcion1) {
+                                case 1:
+                                    System.out.println ("Ingrese el mensaje");
+                                    break;
+                                case 2:
+                                    System.out.println ("Matriz Clave A");
+                                    break;
+                                case 3:
+                                    System.out.println ("Matriz Clave B");
+                                    break;
+                                case 4:
+                                    System.out.println ("Mensaje Encriptado: ");
+                                    break;
+                                default:
+                                    System.out.println ("Opcion Incorrecta");
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Has seleccionado la opcion 2");
+
+                            System.out.println("============MENU DESENCRIPTAR============");
+                            System.out.println("Mensaje cifrado es: ");
+
+
+                            break;
+                        case 3:
+                            System.out.println("Has seleccionado la opcion 3");
+
+                            int opcion3;
+
+                            System.out.println("==========ATAQUE CON TEXTO CLARO==========");
+                            System.out.println("1. Ingresar Matriz mensaje original");
+                            System.out.println("2. Ingrese Matriz Clave A");
+                            System.out.println("3. Ingresar Matriz mensaje cifrado");
+                            System.out.println("4. Obtener Clave");
+                            System.out.println("==========================================");
+                            System.out.println("Escoge una de las siguientes opciones");
+                            opcion3 = teclado.nextInt();
+
+                            switch (opcion3) {
+                                case 1:
+                                    System.out.println ("Matriz del mensaje original");
+                                    break;
+                                case 2:
+                                    System.out.println ("Matriz Clave A");
+                                    break;
+                                case 3:
+                                    System.out.println ("Matriz del mensaje cifrado");
+                                    break;
+                                case 4:
+                                    System.out.println ("Su clave es: ");
+                                    break;
+                                default:
+                                    System.out.println ("Opcion Incorrecta");
+                                    break;
+                            }
+                            break;
+                        case 4:
+                            System.out.println("Has seleccionado la opcion 4");
+
+                            int opcion4;
+
+                            System.out.println("=============GENERAR REPORTES=============");
+                            System.out.println("1. Reporte Encriptar");
+                            System.out.println("2. Reporte Desencriptar");
+                            System.out.println("3. Reporte Ataque con texto Claro");
+                            System.out.println("==========================================");
+                            System.out.println("Escoge una de las siguientes opciones");
+                            opcion4 = teclado.nextInt();
+
+                            switch (opcion4) {
+                                case 1:
+                                    System.out.println("Su reporte de encriptación: ");
+                                    break;
+                                case 2:
+                                    System.out.println("Su reporte de desencriptación: ");
+                                    break;
+                                case 3:
+                                    System.out.println("Su reporte de ataque con texto claro: ");
+                                    break;
+                                default:
+                                    System.out.println("Opcion Incorrecta");
+                                    break;
+                            }
+                            break;
+                        default:
+                            System.out.println("Solo números entre 1 y 4");
+                    }
+                }
+                catch (InputMismatchException e) {
+                    System.out.println("Debes insertar un número válido");
+                    teclado.next();
+                }
+            } while (contadorinicio < 1);
+        case "N":
+            System.out.print("APAGANDO");
+        }
+    }
+}
